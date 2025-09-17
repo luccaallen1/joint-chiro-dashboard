@@ -1,0 +1,48 @@
+{
+  "name": "jointchiro-data-dashboard",
+  "version": "1.0.0",
+  "description": "PostgreSQL database system for chiropractic clinic chatbot booking platform",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:replit": "npm run build:frontend && npm run start:production",
+    "start:production": "node api-server.js",
+    "build:frontend": "cd dashboard && npm install && npm run build",
+    "dev": "nodemon src/server.js",
+    "server": "node src/server.js",
+    "server:dev": "nodemon src/server.js",
+    "migrate": "node src/migrate.js",
+    "seed": "node src/seed.js",
+    "import": "node src/import.js",
+    "import:manual": "curl -X POST http://localhost:3000/api/import/trigger -H 'Content-Type: application/json' -d '{\"incremental\": false}'",
+    "import:incremental": "curl -X POST http://localhost:3000/api/import/trigger -H 'Content-Type: application/json' -d '{\"incremental\": true}'",
+    "status": "curl http://localhost:3000/api/import/status",
+    "health": "curl http://localhost:3000/health",
+    "test:airtable": "curl http://localhost:3000/api/test/airtable-connection",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f postgres"
+  },
+  "keywords": [
+    "postgresql",
+    "database",
+    "chiropractic",
+    "chatbot",
+    "booking"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "airtable": "^0.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "node-cron": "^4.2.1",
+    "pg": "^8.11.3",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

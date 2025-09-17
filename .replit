@@ -1,0 +1,8 @@
+run = "npm run start:replit"
+modules = ["nodejs-20"]
+
+[deployment]
+run = ["sh", "-c", "npm run start:replit"]
+
+[env]
+NODE_ENV = "production"

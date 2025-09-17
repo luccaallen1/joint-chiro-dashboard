@@ -1,0 +1,708 @@
+{
+  "generatedAt": "2025-09-17T11:04:50.580Z",
+  "totalClinics": 117,
+  "clinics": {
+    "abcd": {
+      "bookings": 0,
+      "leads": 0,
+      "engaged": 6,
+      "conversations": 6
+    },
+    "Almaden Ranch": {
+      "bookings": 3,
+      "leads": 93,
+      "engaged": 14,
+      "conversations": 99
+    },
+    "Anderson": {
+      "bookings": 24,
+      "leads": 78,
+      "engaged": 62,
+      "conversations": 123
+    },
+    "Anderson Township": {
+      "bookings": 3,
+      "leads": 39,
+      "engaged": 12,
+      "conversations": 46
+    },
+    "Arnold": {
+      "bookings": 2,
+      "leads": 2,
+      "engaged": 45,
+      "conversations": 68
+    },
+    "Arvada North": {
+      "bookings": 10,
+      "leads": 48,
+      "engaged": 17,
+      "conversations": 66
+    },
+    "Arvada - Wheat Ridge": {
+      "bookings": 8,
+      "leads": 55,
+      "engaged": 18,
+      "conversations": 78
+    },
+    "Atascocita": {
+      "bookings": 14,
+      "leads": 108,
+      "engaged": 36,
+      "conversations": 148
+    },
+    "Belle Isle": {
+      "bookings": 58,
+      "leads": 279,
+      "engaged": 137,
+      "conversations": 372
+    },
+    "Bellevue": {
+      "bookings": 24,
+      "leads": 104,
+      "engaged": 102,
+      "conversations": 217
+    },
+    "Bellevue Kelsey Creek": {
+      "bookings": 7,
+      "leads": 80,
+      "engaged": 25,
+      "conversations": 101
+    },
+    "Bellingham": {
+      "bookings": 36,
+      "leads": 141,
+      "engaged": 95,
+      "conversations": 232
+    },
+    "Bloomington IN": {
+      "bookings": 60,
+      "leads": 123,
+      "engaged": 97,
+      "conversations": 206
+    },
+    "Bowling Green": {
+      "bookings": 19,
+      "leads": 55,
+      "engaged": 37,
+      "conversations": 99
+    },
+    "Brentwood": {
+      "bookings": 21,
+      "leads": 95,
+      "engaged": 73,
+      "conversations": 166
+    },
+    "Brokaw Plaza": {
+      "bookings": 25,
+      "leads": 233,
+      "engaged": 45,
+      "conversations": 258
+    },
+    "Burke": {
+      "bookings": 11,
+      "leads": 74,
+      "engaged": 58,
+      "conversations": 168
+    },
+    "Camden Park": {
+      "bookings": 4,
+      "leads": 77,
+      "engaged": 12,
+      "conversations": 91
+    },
+    "Capitol Hill": {
+      "bookings": 54,
+      "leads": 379,
+      "engaged": 129,
+      "conversations": 445
+    },
+    "Central West End": {
+      "bookings": 26,
+      "leads": 79,
+      "engaged": 56,
+      "conversations": 96
+    },
+    "Chesterfield": {
+      "bookings": 18,
+      "leads": 47,
+      "engaged": 34,
+      "conversations": 67
+    },
+    "Cinco Ranch": {
+      "bookings": 17,
+      "leads": 97,
+      "engaged": 31,
+      "conversations": 116
+    },
+    "Clarksville IN": {
+      "bookings": 49,
+      "leads": 209,
+      "engaged": 173,
+      "conversations": 405
+    },
+    "Clemson": {
+      "bookings": 22,
+      "leads": 78,
+      "engaged": 55,
+      "conversations": 114
+    },
+    "Cool Springs": {
+      "bookings": 18,
+      "leads": 93,
+      "engaged": 71,
+      "conversations": 163
+    },
+    "Copperfield": {
+      "bookings": 20,
+      "leads": 124,
+      "engaged": 49,
+      "conversations": 162
+    },
+    "Cottleville": {
+      "bookings": 10,
+      "leads": 38,
+      "engaged": 26,
+      "conversations": 56
+    },
+    "Council Bluffs": {
+      "bookings": 22,
+      "leads": 129,
+      "engaged": 44,
+      "conversations": 165
+    },
+    "Creve Coeur": {
+      "bookings": 25,
+      "leads": 50,
+      "engaged": 38,
+      "conversations": 68
+    },
+    "Cy-fair": {
+      "bookings": 6,
+      "leads": 99,
+      "engaged": 26,
+      "conversations": 151
+    },
+    "Cypress": {
+      "bookings": 22,
+      "leads": 104,
+      "engaged": 53,
+      "conversations": 156
+    },
+    "Danville": {
+      "bookings": 0,
+      "leads": 3,
+      "engaged": 2,
+      "conversations": 11
+    },
+    "Danville VA": {
+      "bookings": 87,
+      "leads": 301,
+      "engaged": 187,
+      "conversations": 387
+    },
+    "Des Peres": {
+      "bookings": 12,
+      "leads": 40,
+      "engaged": 29,
+      "conversations": 70
+    },
+    "Downtown Denver at Market Station": {
+      "bookings": 18,
+      "leads": 96,
+      "engaged": 32,
+      "conversations": 109
+    },
+    "East Nashville": {
+      "bookings": 12,
+      "leads": 88,
+      "engaged": 77,
+      "conversations": 199
+    },
+    "East Towne Madison": {
+      "bookings": 2,
+      "leads": 18,
+      "engaged": 7,
+      "conversations": 19
+    },
+    "Evansville West": {
+      "bookings": 25,
+      "leads": 82,
+      "engaged": 38,
+      "conversations": 103
+    },
+    "Fairview Park": {
+      "bookings": 25,
+      "leads": 63,
+      "engaged": 56,
+      "conversations": 126
+    },
+    "Federal Way": {
+      "bookings": 5,
+      "leads": 5,
+      "engaged": 11,
+      "conversations": 11
+    },
+    "Fort Collins": {
+      "bookings": 8,
+      "leads": 33,
+      "engaged": 14,
+      "conversations": 35
+    },
+    "Fort Collins South": {
+      "bookings": 0,
+      "leads": 0,
+      "engaged": 1,
+      "conversations": 1
+    },
+    "Fuquay Varina": {
+      "bookings": 48,
+      "leads": 195,
+      "engaged": 100,
+      "conversations": 297
+    },
+    "Gadsden": {
+      "bookings": 99,
+      "leads": 254,
+      "engaged": 285,
+      "conversations": 514
+    },
+    "Gammon & Watts": {
+      "bookings": 0,
+      "leads": 21,
+      "engaged": 6,
+      "conversations": 23
+    },
+    "Gilroy": {
+      "bookings": 19,
+      "leads": 162,
+      "engaged": 41,
+      "conversations": 194
+    },
+    "Glen Ellyn": {
+      "bookings": 36,
+      "leads": 265,
+      "engaged": 117,
+      "conversations": 367
+    },
+    "Goodlettsville": {
+      "bookings": 37,
+      "leads": 160,
+      "engaged": 123,
+      "conversations": 255
+    },
+    "Granbury": {
+      "bookings": 7,
+      "leads": 28,
+      "engaged": 29,
+      "conversations": 57
+    },
+    "Greeley": {
+      "bookings": 16,
+      "leads": 70,
+      "engaged": 28,
+      "conversations": 105
+    },
+    "Green Bay West": {
+      "bookings": 7,
+      "leads": 29,
+      "engaged": 8,
+      "conversations": 31
+    },
+    "Greenville": {
+      "bookings": 106,
+      "leads": 435,
+      "engaged": 188,
+      "conversations": 505
+    },
+    "Greer": {
+      "bookings": 19,
+      "leads": 70,
+      "engaged": 59,
+      "conversations": 119
+    },
+    "Hendersonville": {
+      "bookings": 49,
+      "leads": 161,
+      "engaged": 145,
+      "conversations": 299
+    },
+    "Hermitage": {
+      "bookings": 35,
+      "leads": 162,
+      "engaged": 112,
+      "conversations": 258
+    },
+    "Holly Springs": {
+      "bookings": 18,
+      "leads": 137,
+      "engaged": 52,
+      "conversations": 180
+    },
+    "Katy": {
+      "bookings": 13,
+      "leads": 93,
+      "engaged": 38,
+      "conversations": 129
+    },
+    "Kingwood": {
+      "bookings": 23,
+      "leads": 120,
+      "engaged": 63,
+      "conversations": 167
+    },
+    "Landmark": {
+      "bookings": 42,
+      "leads": 273,
+      "engaged": 98,
+      "conversations": 325
+    },
+    "Lee Branch": {
+      "bookings": 60,
+      "leads": 194,
+      "engaged": 199,
+      "conversations": 354
+    },
+    "Lexington NC": {
+      "bookings": 32,
+      "leads": 31,
+      "engaged": 75,
+      "conversations": 95
+    },
+    "Livermore": {
+      "bookings": 15,
+      "leads": 172,
+      "engaged": 33,
+      "conversations": 184
+    },
+    "Logan": {
+      "bookings": 3,
+      "leads": 3,
+      "engaged": 12,
+      "conversations": 12
+    },
+    "Logan Circle on 14th Street": {
+      "bookings": 9,
+      "leads": 98,
+      "engaged": 43,
+      "conversations": 156
+    },
+    "Lorain": {
+      "bookings": 0,
+      "leads": 0,
+      "engaged": 2,
+      "conversations": 5
+    },
+    "Loveland": {
+      "bookings": 7,
+      "leads": 35,
+      "engaged": 19,
+      "conversations": 41
+    },
+    "L Street Marketplace": {
+      "bookings": 37,
+      "leads": 154,
+      "engaged": 57,
+      "conversations": 187
+    },
+    "Lynchburg": {
+      "bookings": 90,
+      "leads": 304,
+      "engaged": 152,
+      "conversations": 385
+    },
+    "Lynnwood": {
+      "bookings": 24,
+      "leads": 109,
+      "engaged": 48,
+      "conversations": 126
+    },
+    "Madison-Fitchburg": {
+      "bookings": 6,
+      "leads": 49,
+      "engaged": 13,
+      "conversations": 58
+    },
+    "McBee Station": {
+      "bookings": 8,
+      "leads": 60,
+      "engaged": 43,
+      "conversations": 104
+    },
+    "McCarthy Ranch": {
+      "bookings": 14,
+      "leads": 102,
+      "engaged": 29,
+      "conversations": 107
+    },
+    "Mentor": {
+      "bookings": 24,
+      "leads": 109,
+      "engaged": 37,
+      "conversations": 122
+    },
+    "Middleburg Heights": {
+      "bookings": 22,
+      "leads": 85,
+      "engaged": 72,
+      "conversations": 155
+    },
+    "Midtown Miami": {
+      "bookings": 2,
+      "leads": 2,
+      "engaged": 7,
+      "conversations": 7
+    },
+    "Morton Ranch": {
+      "bookings": 15,
+      "leads": 76,
+      "engaged": 28,
+      "conversations": 103
+    },
+    "Mountain Brook": {
+      "bookings": 57,
+      "leads": 211,
+      "engaged": 128,
+      "conversations": 307
+    },
+    "Mt. Prospect": {
+      "bookings": 64,
+      "leads": 396,
+      "engaged": 150,
+      "conversations": 490
+    },
+    "Murfreesboro": {
+      "bookings": 18,
+      "leads": 102,
+      "engaged": 81,
+      "conversations": 194
+    },
+    "Napa": {
+      "bookings": 48,
+      "leads": 263,
+      "engaged": 92,
+      "conversations": 287
+    },
+    "Nashville, TN": {
+      "bookings": 6,
+      "leads": 8,
+      "engaged": 44,
+      "conversations": 44
+    },
+    "New Bern": {
+      "bookings": 94,
+      "leads": 338,
+      "engaged": 164,
+      "conversations": 411
+    },
+    "O'Fallon": {
+      "bookings": 17,
+      "leads": 48,
+      "engaged": 28,
+      "conversations": 56
+    },
+    "Oxford": {
+      "bookings": 121,
+      "leads": 277,
+      "engaged": 292,
+      "conversations": 507
+    },
+    "Parma": {
+      "bookings": 0,
+      "leads": 1,
+      "engaged": 5,
+      "conversations": 9
+    },
+    "Pelham": {
+      "bookings": 12,
+      "leads": 70,
+      "engaged": 43,
+      "conversations": 125
+    },
+    "Pinole": {
+      "bookings": 25,
+      "leads": 224,
+      "engaged": 50,
+      "conversations": 249
+    },
+    "Plaza de San Jose": {
+      "bookings": 12,
+      "leads": 82,
+      "engaged": 19,
+      "conversations": 90
+    },
+    "Pleasanton": {
+      "bookings": 6,
+      "leads": 57,
+      "engaged": 18,
+      "conversations": 73
+    },
+    "Polaris": {
+      "bookings": 52,
+      "leads": 275,
+      "engaged": 95,
+      "conversations": 321
+    },
+    "Powdersville": {
+      "bookings": 20,
+      "leads": 97,
+      "engaged": 35,
+      "conversations": 130
+    },
+    "Regency Centre": {
+      "bookings": 7,
+      "leads": 5,
+      "engaged": 68,
+      "conversations": 108
+    },
+    "Renton": {
+      "bookings": 31,
+      "leads": 147,
+      "engaged": 60,
+      "conversations": 176
+    },
+    "Robal Village": {
+      "bookings": 23,
+      "leads": 100,
+      "engaged": 33,
+      "conversations": 128
+    },
+    "Robinson Township": {
+      "bookings": 2,
+      "leads": 1,
+      "engaged": 9,
+      "conversations": 17
+    },
+    "Santa Maria": {
+      "bookings": 88,
+      "leads": 311,
+      "engaged": 163,
+      "conversations": 431
+    },
+    "Seattle": {
+      "bookings": 0,
+      "leads": 0,
+      "engaged": 2,
+      "conversations": 2
+    },
+    "Smyrna": {
+      "bookings": 57,
+      "leads": 100,
+      "engaged": 164,
+      "conversations": 244
+    },
+    "South Anchorage": {
+      "bookings": 50,
+      "leads": 191,
+      "engaged": 89,
+      "conversations": 218
+    },
+    "Spartanburg": {
+      "bookings": 19,
+      "leads": 86,
+      "engaged": 59,
+      "conversations": 153
+    },
+    "Spartanburg East": {
+      "bookings": 45,
+      "leads": 129,
+      "engaged": 85,
+      "conversations": 184
+    },
+    "Spring Hill": {
+      "bookings": 59,
+      "leads": 166,
+      "engaged": 144,
+      "conversations": 269
+    },
+    "Springhurst": {
+      "bookings": 9,
+      "leads": 37,
+      "engaged": 51,
+      "conversations": 97
+    },
+    "Statesville": {
+      "bookings": 16,
+      "leads": 13,
+      "engaged": 53,
+      "conversations": 79
+    },
+    "The Plant": {
+      "bookings": 25,
+      "leads": 245,
+      "engaged": 51,
+      "conversations": 276
+    },
+    "The Point": {
+      "bookings": 21,
+      "leads": 75,
+      "engaged": 46,
+      "conversations": 106
+    },
+    "Trussville": {
+      "bookings": 94,
+      "leads": 237,
+      "engaged": 182,
+      "conversations": 338
+    },
+    "Tumwater": {
+      "bookings": 22,
+      "leads": 119,
+      "engaged": 63,
+      "conversations": 162
+    },
+    "University Place": {
+      "bookings": 4,
+      "leads": 4,
+      "engaged": 9,
+      "conversations": 9
+    },
+    "Wall Township": {
+      "bookings": 39,
+      "leads": 320,
+      "engaged": 110,
+      "conversations": 399
+    },
+    "Walnut Creek": {
+      "bookings": 37,
+      "leads": 175,
+      "engaged": 73,
+      "conversations": 198
+    },
+    "Warminster": {
+      "bookings": 45,
+      "leads": 297,
+      "engaged": 127,
+      "conversations": 349
+    },
+    "Wasilla": {
+      "bookings": 32,
+      "leads": 110,
+      "engaged": 64,
+      "conversations": 150
+    },
+    "West Caldwell": {
+      "bookings": 16,
+      "leads": 69,
+      "engaged": 32,
+      "conversations": 78
+    },
+    "West End": {
+      "bookings": 10,
+      "leads": 117,
+      "engaged": 88,
+      "conversations": 252
+    },
+    "Westgate West": {
+      "bookings": 8,
+      "leads": 66,
+      "engaged": 22,
+      "conversations": 76
+    },
+    "Yorba Linda": {
+      "bookings": 20,
+      "leads": 148,
+      "engaged": 46,
+      "conversations": 156
+    }
+  }
+}
