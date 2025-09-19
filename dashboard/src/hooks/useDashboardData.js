@@ -56,7 +56,8 @@ export function useDashboardData({ clinicId = "all", periodId = "all" }) {
           params.append('period', monthNum);
         }
 
-        const url = `http://localhost:3001/api/simple-metrics/dashboard${params.toString() ? '?' + params.toString() : ''}`;
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+        const url = `${API_URL}/api/simple-metrics/dashboard${params.toString() ? '?' + params.toString() : ''}`;
         const response = await fetch(url);
 
         if (!response.ok) {

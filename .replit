@@ -1,8 +1,26 @@
-run = "npm run start:replit"
-modules = ["nodejs-20"]
+run = "npm run setup && npm start"
+entrypoint = "src/server.js"
 
-[deployment]
-run = ["sh", "-c", "npm run start:replit"]
+[nix]
+channel = "stable-22_11"
 
 [env]
-NODE_ENV = "production"
+PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
+XDG_CONFIG_HOME = "/home/runner/$REPL_SLUG/.config"
+npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
+
+[packager]
+language = "nodejs"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = false
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 3001
+externalPort = 3001
