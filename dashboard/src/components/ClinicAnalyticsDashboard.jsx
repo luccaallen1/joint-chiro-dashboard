@@ -209,7 +209,7 @@ function AutomationBreakdown({ automationBreakdown }) {
         bookings: data.bookings,
         leads: data.leads,
         engaged: data.engaged,
-        conversations: data.conversations,
+        records: data.records,
         conversionRate: data.engaged > 0 ? ((data.bookings / data.engaged) * 100).toFixed(1) : '0.0'
       }))
       .sort((a, b) => b.leads - a.leads); // Sort by leads (highest first)
@@ -382,7 +382,7 @@ export default function ClinicAnalyticsDashboard({
           />
           <StatCard
             icon={MessageSquare}
-            label="Engaged Conversations"
+            label="Engaged Records"
             value={totals.engaged}
             delta={3}
             accent="from-cyan-500/40 to-blue-500/40"
@@ -422,7 +422,7 @@ export default function ClinicAnalyticsDashboard({
             </div>
             <MiniTrend
               points={trendEngaged}
-              label="Monthly engaged conversations"
+              label="Monthly engaged records"
               trend={trend}
               accent="from-cyan-500/40 to-blue-500/40"
             />

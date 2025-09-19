@@ -5,6 +5,8 @@ require('dotenv').config();
 const testRoutes = require('./routes/test');
 const { router: importRoutes, ensureSchedulerInitialized } = require('./routes/import');
 const metricsRoutes = require('./routes/metrics');
+const simpleMetricsRoutes = require('./routes/simple-metrics');
+const databaseRoutes = require('./routes/database');
 const db = require('./db/connection');
 const logger = require('./utils/logger');
 
@@ -19,6 +21,8 @@ app.use(express.json());
 app.use('/api/test', testRoutes);
 app.use('/api/import', importRoutes);
 app.use('/api/metrics', metricsRoutes);
+app.use('/api/simple-metrics', simpleMetricsRoutes);
+app.use('/api/database', databaseRoutes);
 
 // Health check endpoint
 app.get('/health', async (req, res) => {
@@ -105,7 +109,7 @@ app.use((error, req, res, next) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     error: 'Not found',
     path: req.originalUrl,

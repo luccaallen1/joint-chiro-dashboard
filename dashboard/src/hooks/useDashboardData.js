@@ -1,166 +1,87 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
- * Dashboard data hook that provides filtered clinic analytics
+ * Dashboard data hook that fetches real data from the API
  * @param {Object} params - Filter parameters
  * @param {string} params.clinicId - Clinic ID ("all" or specific clinic name)
- * @param {string} params.periodId - Period ID ("2025-02_2025-09" for range or "2025-09" for single month)
- * @returns {Object} Dashboard data including totals, trends, clinics list, and top locations
+ * @param {string} params.periodId - Period ID
+ * @returns {Object} Dashboard data from real database
  */
-export function useDashboardData({ clinicId = "all", periodId = "2025-02_2025-09" }) {
-  const [monthlyData, setMonthlyData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+export function useDashboardData({ clinicId = "all", periodId = "all" }) {
+  const [dashboardData, setDashboardData] = useState({
+    totals: {
+      conversations: 0,
+      bookings: 0,
+      leads: 0,
+      engaged: 0
+    },
+    trend: [],
+    topLocations: [],
+    automationBreakdown: {},
+    clinics: [],
+    isLoading: true,
+    error: null
+  });
 
-  // Load data on mount
   useEffect(() => {
-    const loadData = async () => {
+    const fetchDashboardData = async () => {
       try {
-        setIsLoading(true);
-        const response = await fetch('/monthly-clinic-data.json');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        setDashboardData(prev => ({ ...prev, isLoading: true, error: null }));
+
+        // Build query parameters
+        const params = new URLSearchParams();
+        if (clinicId && clinicId !== 'all') {
+          params.append('clinic', clinicId);
         }
-        const data = await response.json();
-        setMonthlyData(data);
-        setError(null);
-      } catch (err) {
-        console.error('Error loading dashboard data:', err);
-        setError(err.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
 
-    loadData();
-  }, []);
+        // Convert period to month number
+        if (periodId && periodId !== 'all') {
+          let monthNum = periodId;
 
-  // Memoized computed data based on filters
-  const computedData = useMemo(() => {
-    if (!monthlyData) {
-      return {
-        totals: { bookings: 0, leads: 0, engaged: 0 },
-        trend: [],
-        clinics: [],
-        topLocations: [],
-        isLoading,
-        error
-      };
-    }
-
-    // Determine data source based on period
-    let dataSource;
-    let isRangePeriod = periodId === "2025-02_2025-09" || periodId === "all";
-
-    if (isRangePeriod) {
-      dataSource = monthlyData.allTime;
-    } else {
-      dataSource = monthlyData.monthly[periodId];
-    }
-
-    // Get totals based on clinic filter
-    let totals;
-    if (clinicId === "all") {
-      totals = dataSource?.totals || { bookings: 0, leads: 0, engaged: 0 };
-    } else {
-      const clinicData = dataSource?.clinics?.[clinicId];
-      totals = clinicData ? {
-        bookings: clinicData.bookings || 0,
-        leads: clinicData.leads || 0,
-        engaged: clinicData.engaged || 0
-      } : { bookings: 0, leads: 0, engaged: 0 };
-    }
-
-    // Generate trend data from monthly breakdown
-    const trend = monthlyData.months.map(monthKey => {
-      const [year, month] = monthKey.split('-');
-      const monthName = new Date(year, month - 1).toLocaleString('default', { month: 'short' });
-      const monthData = monthlyData.monthly[monthKey];
-
-      if (clinicId === "all") {
-        return {
-          month: monthName,
-          bookings: monthData?.totals?.bookings || 0,
-          leads: monthData?.totals?.leads || 0,
-          engaged: monthData?.totals?.engaged || 0
-        };
-      } else {
-        const clinicMonthData = monthData?.clinics?.[clinicId];
-        return {
-          month: monthName,
-          bookings: clinicMonthData?.bookings || 0,
-          leads: clinicMonthData?.leads || 0,
-          engaged: clinicMonthData?.engaged || 0
-        };
-      }
-    });
-
-    // Generate clinics list
-    const clinics = [
-      { id: "all", name: "All Locations" },
-      ...Object.keys(monthlyData.allTime.clinics).sort().map(name => ({
-        id: name,
-        name: name
-      }))
-    ];
-
-    // Generate top performing locations
-    const sourceForTop = isRangePeriod ? monthlyData.allTime : monthlyData.monthly[periodId];
-    const topLocations = sourceForTop?.clinics ?
-      Object.entries(sourceForTop.clinics)
-        .map(([name, data]) => ({
-          clinic: name,
-          bookings: data.bookings || 0,
-          leads: data.leads || 0,
-          engaged: data.engaged || 0
-        }))
-        .sort((a, b) => b.bookings - a.bookings)
-        .slice(0, 4) : [];
-
-    // Generate automation breakdown based on filters
-    const automationBreakdown = {};
-    if (sourceForTop?.clinics) {
-      if (clinicId === "all") {
-        // Aggregate all clinics' automation data
-        Object.values(sourceForTop.clinics).forEach(clinicData => {
-          if (clinicData.automations) {
-            Object.entries(clinicData.automations).forEach(([code, data]) => {
-              if (!automationBreakdown[code]) {
-                automationBreakdown[code] = { bookings: 0, leads: 0, engaged: 0, conversations: 0 };
-              }
-              automationBreakdown[code].bookings += data.bookings || 0;
-              automationBreakdown[code].leads += data.leads || 0;
-              automationBreakdown[code].engaged += data.engaged || 0;
-              automationBreakdown[code].conversations += data.conversations || 0;
-            });
+          // Handle different period formats
+          if (periodId.includes('2025-')) {
+            // Extract month from formats like "2025-02_2025-09" or "2025-02"
+            if (periodId.includes('_')) {
+              // Range format - use first month for now
+              monthNum = periodId.split('_')[0].split('-')[1];
+            } else {
+              // Single month format
+              monthNum = periodId.split('-')[1];
+            }
+          } else if (periodId.length <= 2) {
+            // Already a month number
+            monthNum = periodId.padStart(2, '0');
           }
-        });
-      } else {
-        // Use specific clinic's automation data
-        const clinicData = sourceForTop.clinics[clinicId];
-        if (clinicData?.automations) {
-          Object.entries(clinicData.automations).forEach(([code, data]) => {
-            automationBreakdown[code] = {
-              bookings: data.bookings || 0,
-              leads: data.leads || 0,
-              engaged: data.engaged || 0,
-              conversations: data.conversations || 0
-            };
-          });
+
+          params.append('period', monthNum);
         }
+
+        const url = `http://localhost:3001/api/simple-metrics/dashboard${params.toString() ? '?' + params.toString() : ''}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch dashboard data: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        setDashboardData({
+          ...data,
+          isLoading: false,
+          error: null
+        });
+
+      } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+        setDashboardData(prev => ({
+          ...prev,
+          isLoading: false,
+          error: error.message
+        }));
       }
-    }
-
-    return {
-      totals,
-      trend,
-      clinics,
-      topLocations,
-      automationBreakdown,
-      isLoading: false,
-      error: null
     };
-  }, [monthlyData, clinicId, periodId, isLoading, error]);
 
-  return computedData;
+    fetchDashboardData();
+  }, [clinicId, periodId]);
+
+  return dashboardData;
 }

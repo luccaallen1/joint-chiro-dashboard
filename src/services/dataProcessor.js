@@ -18,7 +18,7 @@ class DataProcessor {
       const fields = record.fields;
       const processedRecord = {
         airtable_id: record.id,
-        external_id: fields['User ID'] || null,
+        external_id: fields['User ID'] || record.id, // Fallback to record ID if User ID is empty
         name: fields['Name'] || null,
         clinic: fields['Clinic'] || null,
         email: fields['Email'] || null,
